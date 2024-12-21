@@ -1,5 +1,24 @@
 # arxiv_alert
-## Run
+
+## 1. build env
+```shell
+conda create -n arxiv python=3.8
+conda activate arxiv
+conda install PyYaml
+conda install feedparser==5.2.1
+```
+## 2. Run
 ```shell
 python arxiv_mail_alert.py --config_path config-keyword.yaml
+```
+# Daily alert
+
+You need to edit your crontab to add an entry for your script. You can do this by running:
+
+```shell
+crontab -e
+```
+Then, add the following line to your crontab to run your script at 9 AM every weekday (Monday to Friday):
+```shell
+0 9 * * 1-5 cd ~/yourname/workshop/code/auto_mail_alert && conda activate arxiv && python arxiv_mail_alert.py --config_path config-keyword.yaml
 ```
