@@ -31,7 +31,11 @@ You can verify that your cron job is set up correctly by running:
 ```shell
 crontab -l
 ```
-it will output as follows contents in your screen:
+It will output the following contents on your screen:
 ```shell
 0 9 * * 1-5 cd ~/workshop/code/auto_mail_alert/ && source /opt/miniconda3/bin/activate arxiv && python arxiv_alert.py --config_path config-keyword.yaml >> ~/workshop/code/auto_mail_alert/arxiv_mail.log 2>&1
+```
+if not, it will output the following contents:
+```shell
+no crontab for user
 ```
