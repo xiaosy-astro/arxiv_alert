@@ -20,5 +20,5 @@ crontab -e
 ```
 Then, add the following line to your crontab to run your script at 9 AM every weekday (Monday to Friday):
 ```shell
-0 9 * * 1-5 cd ~/yourname/workshop/code/auto_mail_alert && conda activate arxiv && python arxiv_mail_alert.py --config_path config-keyword.yaml
+0 9 * * 1-5 cd ~/workshop/code/auto_mail_alert/ && source /opt/miniconda3/bin/activate arxiv && python arxiv_alert.py --config_path config-keyword.yaml >> ~/workshop/code/auto_mail_alert/arxiv_mail.log 2>&1
 ```
