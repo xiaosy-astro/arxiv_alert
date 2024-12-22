@@ -13,7 +13,7 @@ python arxiv_mail_alert.py --config_path config-keyword.yaml
 ```
 # Daily alert
 
-You need to edit your crontab to add an entry for your script. You can do this by running:
+Maybe, you want to edit your crontab to add an entry for your script. You can do this by running:
 
 ```shell
 crontab -e
