@@ -132,7 +132,7 @@ def send_email(body, config_dict):
         with smtplib.SMTP_SSL(config_dict['smtp_host'], config_dict['smtp_port']) as server:
             server.login(sender, password)
             server.sendmail(sender, receivers, msg.as_string())
-        print("Email sent successfully.")
+        print(f"Email sent successfully (Send time:{now.strftime('%d-%b-%Y')}).")
     except Exception as e:
         print(f"Failed to send email: {e}")
 
