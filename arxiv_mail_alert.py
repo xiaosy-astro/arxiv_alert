@@ -40,17 +40,45 @@ def arxiv_alert(categories=None, keywords=None, authors=None, max_results=10):
     feed = feedparser.parse(response)
 
     # Prepare HTML content
+    # Prepare HTML content
     body = """
     <!DOCTYPE html>
     <html>
     <head>
     <meta charset="UTF-8">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
-        h1 { color: #333; }
-        .entry { margin-bottom: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; background: #f9f9f9; }
-        .entry h2 { margin: 0; font-size: 18px; color: #007BFF; }
-        .entry p { margin: 5px 0; }
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            padding: 20px; 
+            background-color: #121212; /* Dark background */
+            color: #E0E0E0; /* Light text */
+        }
+        h1 { 
+            color: #BB86FC; /* Highlighted title color */
+        }
+        .entry { 
+            margin-bottom: 20px; 
+            padding: 10px; 
+            border: 1px solid #333; /* Subtle border for dark mode */
+            border-radius: 5px; 
+            background: #1E1E1E; /* Slightly lighter dark background */
+        }
+        .entry h2 { 
+            margin: 0; 
+            font-size: 18px; 
+            color: #03DAC6; /* Link color */
+        }
+        .entry p { 
+            margin: 5px 0; 
+        }
+        a { 
+            color: #BB86FC; 
+            text-decoration: none; 
+        }
+        a:hover { 
+            text-decoration: underline; 
+        }
     </style>
     </head>
     <body>
@@ -80,7 +108,6 @@ def arxiv_alert(categories=None, keywords=None, authors=None, max_results=10):
 
     body += "</body></html>"
     return body
-
 def load_config(args):
     with open(args.config_path, 'r') as f:
         try:
